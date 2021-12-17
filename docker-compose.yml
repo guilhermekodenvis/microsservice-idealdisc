@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  database:
+    image: postgres
+    container_name: postgres_microsservice_idealdisc
+    environment:
+      POSTGRES_USER: 'microsservice-idealdisc'
+      POSTGRES_PASSWORD: 'e9bba0b7a1699a735a512333d58b3a2b'
+      POSTGRES_DB: 'microsservice-idealdisc'
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/data/postgres
+
+  app:
+    build: .
+    container_name: portal
+    restart: always
+    ports:
+      - 3333:3333
+      - 9229:9229
+    volumes:
+      - .:/usr/app
+    links:
+        - database
+    depends_on:
+        - database
+
+
+volumes:
+  pgdata:
+    driver: local

@@ -1,0 +1,26 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Microsserviço idealdisc",
+    "description": "API microsserviço para leitura de dados recebidos no site idealdisc e disparo de emails",
+    "version": "1.0.0",
+    "contact": {
+      "email": "gui.sartori96@gmail.com"
+    }
+  },
+  "paths": {
+  },
+  "definitions": {
+    "Specification": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
