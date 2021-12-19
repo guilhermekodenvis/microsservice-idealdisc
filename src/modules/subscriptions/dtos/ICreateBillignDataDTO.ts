@@ -1,5 +1,5 @@
 export default interface ICreateBillignDataDTO {
-  origin: string;
+  pj: boolean;
   corporateName: string;
   name: string;
   email: string;

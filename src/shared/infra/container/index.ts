@@ -1,3 +1,5 @@
+import "./providers";
+
 import BillingDatasRepository from "@modules/subscriptions/infra/typeorm/repositories/BillingDatasRepository";
 import MasterUserDatasRepository from "@modules/subscriptions/infra/typeorm/repositories/MasterUserDatasRepository";
 import ParticipantsRepository from "@modules/subscriptions/infra/typeorm/repositories/ParticipantsRepository";

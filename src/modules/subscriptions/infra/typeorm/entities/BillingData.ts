@@ -16,7 +16,7 @@ class BillingData {
   id: string;
 
   @Column()
-  origin: string;
+  pj: boolean;
 
   @Column({ name: "corporate_name" })
   corporateName: string;

@@ -1,5 +1,7 @@
+import path from "path";
 import { inject, injectable } from "tsyringe";
 
+import IMailProvider from "@shared/infra/container/providers/MailProvider/IMailProvider";
 import AppError from "@shared/infra/errors/AppError";
 
 import ICreateSubscriptionDTO from "../dtos/ICreateSubscriptionDTO";
@@ -23,10 +25,15 @@ class CreateSubscriptionService {
 
     @inject("SubscriptionsRepository")
     private subscriptionsRepository: ISubscriptionsRepository,
+
+    @inject("EtherealMailProvider")
+    private mailProvider: IMailProvider,
   ) {}
 
   public async run({ participants, billingData, masterUserData }: ICreateSubscriptionDTO): Promise<Subscription> {
     const savedSubscription = await this.subscriptionsRepository.create();
+
+    const templatePath = path.resolve(__dirname, "..", "views", "emails", "subscriptionDone.hbs");
 
     participants.forEach(async participant => {
       await this.participantsRepository.create({
@@ -48,6 +55,17 @@ class CreateSubscriptionService {
     const returnableSubscription = await this.subscriptionsRepository.findById(savedSubscription.id);
 
     if (!returnableSubscription) throw new AppError("Opa, deu ruim! Subscription retornável não encontrada.");
+
+    const variables = {
+      returnableSubscription,
+    };
+
+    await this.mailProvider.sendMail(
+      masterUserData.email,
+      "Inscrição formação IDEALDISC AVANÇADO.",
+      variables,
+      templatePath,
+    );
 
     return returnableSubscription;
   }

@@ -14,8 +14,8 @@ export class CreateBillingDatasTable1639775070329 implements MigrationInterface 
             default: "uuid_generate_v4()",
           },
           {
-            name: "origin",
-            type: "varchar",
+            name: "pj",
+            type: "boolean",
           },
           {
             name: "corporate_name",
