@@ -26,7 +26,7 @@ class CreateSubscriptionService {
     @inject("SubscriptionsRepository")
     private subscriptionsRepository: ISubscriptionsRepository,
 
-    @inject("EtherealMailProvider")
+    @inject("MailProvider")
     private mailProvider: IMailProvider,
   ) {}
 

@@ -1,259 +1,270 @@
-<style>
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <style>
 
-  * {
-    font-family: "Open Sans";
-  }
+    * {
+      font-family: "Open Sans";
+    }
 
-  h1 {
-    color: #2fafcc;
-  }
+    h1 {
+      color: #2fafcc;
+    }
 
-  h4 {
-    color: #053142;
-  }
+    h4 {
+      color: #053142;
+    }
 
-  strong {
-    color: #053142;
-  }
+    strong {
+      color: #053142;
+    }
 
-  h2 {
-    text-align: center;
-    color: #053142;
-  }
+    h2 {
+      text-align: center;
+      color: #053142;
+    }
 
-  .table {
-    text-align: center;
-    display: block;
-  }
+    .table {
+      text-align: center;
+      display: block;
+    }
 
-  .table table {
-    border-spacing: 0;
-    border-collapse: collapse;
-    border: 1px solid #053142;
-    width: 60%;
-    margin-left: 10%;
-  }
+    .table table {
+      border-spacing: 0;
+      border-collapse: collapse;
+      border: 1px solid #053142;
+      width: 60%;
+      margin-left: 10%;
+    }
 
-  .table .darkblue-bg {
-    background-color: #053142;
-    color: #fff;
-    border-spacing: 0;
-    border-collapse: collapse;
-    border: 1px solid #053142;
-  }
+    .table .darkblue-bg {
+      background-color: #053142;
+      color: #fff;
+      border-spacing: 0;
+      border-collapse: collapse;
+      border: 1px solid #053142;
+    }
 
-  .table table tr {
-    border-spacing: 0;
-    border-collapse: collapse;
-    border: 1px solid #053142;
-  }
-  .table table td {
-    border-spacing: 0;
-    border-collapse: collapse;
-    border-left: 1px solid #053142;
-  }
-</style>
+    .table table tr {
+      border-spacing: 0;
+      border-collapse: collapse;
+      border: 1px solid #053142;
+    }
+    .table table td {
+      border-spacing: 0;
+      border-collapse: collapse;
+      border-left: 1px solid #053142;
+    }
+  </style>
+  </head>
+  <body>
 
-<div>
-  <h1>
-    Obrigado por ser inscrever!
-  </h1>
 
-  <h4>
-    Olá, segue sua confirmação de inscrição. <br />
-    Entraremos em contato para enviar o material do treinamento e informar os dados para acesso ao sistema.
-  </h4>
 
-  <p>
+
+  <div>
+    <h1>
+      Obrigado por ser inscrever!
+    </h1>
+
+    <h4>
+      Olá, segue sua confirmação de inscrição. <br />
+      Entraremos em contato para enviar o material do treinamento e informar os dados para acesso ao sistema.
+    </h4>
+
+    <p>
+      <br/>
+      <strong>
+        Investimento:
+      </strong>
+      <strong>
+        R$ 624,00.
+      </strong>
+      <br/>
+      <strong>
+        Inclui:
+      </strong>
+      Apostila digital, Acesso ao sistema idealDisc com 10 avaliações GRÁTIS, Seu relatório de Perfil Comportamental, Certificado DISC Avançado
+      <br/>
+      <strong>
+        Local:
+      </strong>
+      <strong>
+        Reunião online.
+      </strong>
+      <br/>
+      <strong>
+        Data:
+      </strong>
+      <strong>
+        27/01/2022.
+      </strong>
+      <strong>
+        Horário:
+      </strong>
+      8h30 às 17h30.
+    </p>
+
+    <h2>
+      Ficha de Inscrição
+    </h2>
+
+    {{#if returnableSubscription.billingData.pj}}
+      <div class="table">
+        <table>
+          <tbody>
+            <tr>
+              <th class="darkblue-bg" colspan="2">Dados de Faturamento</th>
+            </tr>
+            <tr>
+              <th class="darkblue-bg" colspan="2">Pessoa jurídica</th>
+            </tr>
+            <tr>
+              <th width="30%" >Empresa (Razão Social)</th>
+              <td>{{returnableSubscription.billingData.corporateName}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >CNPJ</th>
+              <td>{{returnableSubscription.billingData.cpfOrCnpj}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >Endereço</th>
+              <td>{{returnableSubscription.billingData.street}}, {{returnableSubscription.billingData.number}}, {{returnableSubscription.billingData.complement}}, {{returnableSubscription.billingData.neighboor}}, {{returnableSubscription.billingData.city}}, {{returnableSubscription.billingData.state}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >CEP</th>
+              <td>{{returnableSubscription.billingData.postalCode}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >Nome</th>
+              <td>{{returnableSubscription.billingData.name}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >E-Mail</th>
+              <td>{{returnableSubscription.billingData.email}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >Forma de Pagamento</th>
+              <td>{{returnableSubscription.billingData.paymentMethod}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    {{else}}
+      <div class="table">
+        <table>
+          <tbody>
+            <tr>
+              <th class="darkblue-bg" colspan="2">Dados de Faturamento</th>
+            </tr>
+            <tr>
+              <th class="darkblue-bg" colspan="2">Pessoa Física</th>
+            </tr>
+            <tr>
+              <th width="30%" >Nome</th>
+              <td>{{returnableSubscription.billingData.name}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >E-Mail</th>
+              <td>{{returnableSubscription.billingData.email}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >CPF</th>
+              <td>{{returnableSubscription.billingData.cpfOrCnpj}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >Endereço</th>
+              <td>{{returnableSubscription.billingData.street}}, {{returnableSubscription.billingData.number}}, {{returnableSubscription.billingData.complement}}, {{returnableSubscription.billingData.neighboor}}, {{returnableSubscription.billingData.city}}, {{returnableSubscription.billingData.state}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >CEP</th>
+              <td>{{returnableSubscription.billingData.postalCode}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >Forma de Pagamento</th>
+              <td>{{returnableSubscription.billingData.paymentMethod}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    {{/if}}
+
     <br/>
-    <strong>
-      Investimento:
-    </strong>
-    <strong>
-      R$ 624,00.
-    </strong>
-    <br/>
-    <strong>
-      Inclui:
-    </strong>
-    Apostila digital, Acesso ao sistema idealDisc com 10 avaliações GRÁTIS, Seu relatório de Perfil Comportamental, Certificado DISC Avançado
-    <br/>
-    <strong>
-      Local:
-    </strong>
-    <strong>
-      Reunião online.
-    </strong>
-    <br/>
-    <strong>
-      Data:
-    </strong>
-    <strong>
-      27/01/2022.
-    </strong>
-    <strong>
-      Horário:
-    </strong>
-    8h30 às 17h30.
-  </p>
 
-  <h2>
-    Ficha de Inscrição
-  </h2>
-
-  {{#if returnableSubscription.billingData.pj}}
     <div class="table">
       <table>
         <tbody>
           <tr>
-            <th class="darkblue-bg" colspan="2">Dados de Faturamento</th>
+            <th class="darkblue-bg" colspan="2">Dados dos participantes</th>
           </tr>
-          <tr>
-            <th class="darkblue-bg" colspan="2">Pessoa jurídica</th>
-          </tr>
-          <tr>
-            <th width="30%" >Empresa (Razão Social)</th>
-            <td>{{returnableSubscription.billingData.corporateName}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >CNPJ</th>
-            <td>{{returnableSubscription.billingData.cpfOrCnpj}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >Endereço</th>
-            <td>{{returnableSubscription.billingData.street}}, {{returnableSubscription.billingData.number}}, {{returnableSubscription.billingData.complement}}, {{returnableSubscription.billingData.neighboor}}, {{returnableSubscription.billingData.city}}, {{returnableSubscription.billingData.state}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >CEP</th>
-            <td>{{returnableSubscription.billingData.postalCode}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >Nome</th>
-            <td>{{returnableSubscription.billingData.name}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >E-Mail</th>
-            <td>{{returnableSubscription.billingData.email}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >Forma de Pagamento</th>
-            <td>{{returnableSubscription.billingData.paymentMethod}}</td>
-          </tr>
+          {{#each returnableSubscription.participants}}
+            <tr>
+              <th width="30%" >Nome</th>
+              <td>{{this.name}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >Cpf</th>
+              <td>{{this.cpf}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >Email</th>
+              <td>{{this.email}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >Telefone</th>
+              <td>{{this.tel}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >Celular</th>
+              <td>{{this.cell}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >Cargo</th>
+              <td>{{this.office}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >Instagram</th>
+              <td>{{this.instagram}}</td>
+            </tr>
+            <tr>
+              <th width="30%" colspan="2">&nbsp;</th>
+            </tr>
+          {{/each}}
         </tbody>
       </table>
     </div>
-  {{else}}
+
+    <br/>
     <div class="table">
       <table>
         <tbody>
           <tr>
-            <th class="darkblue-bg" colspan="2">Dados de Faturamento</th>
-          </tr>
-          <tr>
-            <th class="darkblue-bg" colspan="2">Pessoa Física</th>
+            <th class="darkblue-bg" colspan="2">Dados do Usuário Master (plataforma idealDisc)</th>
           </tr>
           <tr>
             <th width="30%" >Nome</th>
-            <td>{{returnableSubscription.billingData.name}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >E-Mail</th>
-            <td>{{returnableSubscription.billingData.email}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >CPF</th>
-            <td>{{returnableSubscription.billingData.cpfOrCnpj}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >Endereço</th>
-            <td>{{returnableSubscription.billingData.street}}, {{returnableSubscription.billingData.number}}, {{returnableSubscription.billingData.complement}}, {{returnableSubscription.billingData.neighboor}}, {{returnableSubscription.billingData.city}}, {{returnableSubscription.billingData.state}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >CEP</th>
-            <td>{{returnableSubscription.billingData.postalCode}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >Forma de Pagamento</th>
-            <td>{{returnableSubscription.billingData.paymentMethod}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  {{/if}}
-
-  <br/>
-
-  <div class="table">
-    <table>
-      <tbody>
-        <tr>
-          <th class="darkblue-bg" colspan="2">Dados dos participantes</th>
-        </tr>
-        {{#each returnableSubscription.participants}}
-          <tr>
-            <th width="30%" >Nome</th>
-            <td>{{this.name}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >Cpf</th>
-            <td>{{this.cpf}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >Email</th>
-            <td>{{this.email}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >Telefone</th>
-            <td>{{this.tel}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >Celular</th>
-            <td>{{this.cell}}</td>
+            <td>{{returnableSubscription.masterUserData.name}}</td>
           </tr>
           <tr>
             <th width="30%" >Cargo</th>
-            <td>{{this.office}}</td>
+            <td>{{returnableSubscription.masterUserData.office}}</td>
           </tr>
           <tr>
-            <th width="30%" >Instagram</th>
-            <td>{{this.instagram}}</td>
+            <th width="30%" >E-mail</th>
+            <td>{{returnableSubscription.masterUserData.email}}</td>
           </tr>
           <tr>
-            <th width="30%" colspan="2">&nbsp;</th>
+            <th width="30%" >Telefone</th>
+            <td>{{returnableSubscription.masterUserData.tel}}</td>
           </tr>
-        {{/each}}
-      </tbody>
-    </table>
+          <tr>
+            <th width="30%" >Celular</th>
+            <td>{{returnableSubscription.masterUserData.mobile}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <br/>
-  <div class="table">
-    <table>
-      <tbody>
-        <tr>
-          <th class="darkblue-bg" colspan="2">Dados do Usuário Master (plataforma idealDisc)</th>
-        </tr>
-        <tr>
-          <th width="30%" >Nome</th>
-          <td>{{returnableSubscription.masterUserData.name}}</td>
-        </tr>
-        <tr>
-          <th width="30%" >Cargo</th>
-          <td>{{returnableSubscription.masterUserData.office}}</td>
-        </tr>
-        <tr>
-          <th width="30%" >E-mail</th>
-          <td>{{returnableSubscription.masterUserData.email}}</td>
-        </tr>
-        <tr>
-          <th width="30%" >Telefone</th>
-          <td>{{returnableSubscription.masterUserData.tel}}</td>
-        </tr>
-        <tr>
-          <th width="30%" >Celular</th>
-          <td>{{returnableSubscription.masterUserData.mobile}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+  </body>
+</html>
