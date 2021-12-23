@@ -60,12 +60,14 @@ class CreateSubscriptionService {
       returnableSubscription,
     };
 
-    await this.mailProvider.sendMail(
-      masterUserData.email,
-      "Inscrição formação IDEALDISC AVANÇADO.",
-      variables,
-      templatePath,
-    );
+    let emailToSend: string;
+    if (masterUserData.email) {
+      emailToSend = masterUserData.email;
+    } else {
+      emailToSend = billingData.email;
+    }
+
+    await this.mailProvider.sendMail(emailToSend, "Inscrição formação IDEALDISC AVANÇADO.", variables, templatePath);
 
     return returnableSubscription;
   }
