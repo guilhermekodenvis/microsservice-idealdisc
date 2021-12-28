@@ -13,8 +13,8 @@ export default class SESMailProvider implements IMailProvider {
     this.client = nodemailer.createTransport({
       service: "Gmail",
       auth: {
-        user: "idealdisc@idealdisc.com.br",
-        pass: "Ideal@2020",
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS,
       },
       // host: "email-smtp.us-east-2.amazonaws.com",
       // port: 587,
