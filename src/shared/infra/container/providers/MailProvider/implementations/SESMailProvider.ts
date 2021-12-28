@@ -11,10 +11,22 @@ export default class SESMailProvider implements IMailProvider {
   private client: Transporter;
   constructor() {
     this.client = nodemailer.createTransport({
-      SES: new aws.SES({
-        apiVersion: "2010-12-01",
-        region: process.env.AWS_SES_REGION,
-      }),
+      service: "Gmail",
+      auth: {
+        user: "idealdisc@idealdisc.com.br",
+        pass: "Ideal@2020",
+      },
+      // host: "email-smtp.us-east-2.amazonaws.com",
+      // port: 587,
+      // secure: false,
+      // auth: {
+      //   user: process.env.AWS_SMTP_ACCESS_KEY_ID,
+      //   pass: process.env.AWS_SMTP_SECRET_ACCESS_KEY,
+      // },
+      // SES: new aws.SES({
+      //   apiVersion: "2010-12-01",
+      //   region: process.env.AWS_SES_REGION,
+      // }),
     });
   }
 
@@ -27,7 +39,7 @@ export default class SESMailProvider implements IMailProvider {
 
     await this.client.sendMail({
       to,
-      from: "Idealdisc <treinamento@idealdisc.com.br>",
+      from: "Idealdisc <contato@idealdisc.com.br>",
       subject,
       html: templateHTML,
     });
