@@ -67,12 +67,14 @@ class CreateSubscriptionService {
       emailToSend = billingData.email;
     }
 
+    const filteredCc = cc.filter(n => n);
+
     await this.mailProvider.sendMail(
       emailToSend,
       "Inscrição formação IDEALDISC AVANÇADO.",
       variables,
       templatePath,
-      cc,
+      filteredCc,
     );
 
     return returnableSubscription;
