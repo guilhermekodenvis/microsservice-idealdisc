@@ -6,4 +6,5 @@ export default interface ICreateSubscriptionDTO {
   participants: Participant[];
   billingData: BillingData;
   masterUserData: MasterUserData;
+  cc: string[];
 }

@@ -30,7 +30,7 @@ class CreateSubscriptionService {
     private mailProvider: IMailProvider,
   ) {}
 
-  public async run({ participants, billingData, masterUserData }: ICreateSubscriptionDTO): Promise<Subscription> {
+  public async run({ participants, billingData, masterUserData, cc }: ICreateSubscriptionDTO): Promise<Subscription> {
     const savedSubscription = await this.subscriptionsRepository.create();
 
     const templatePath = path.resolve(__dirname, "..", "views", "emails", "subscriptionDone.hbs");
@@ -67,7 +67,13 @@ class CreateSubscriptionService {
       emailToSend = billingData.email;
     }
 
-    await this.mailProvider.sendMail(emailToSend, "Inscrição formação IDEALDISC AVANÇADO.", variables, templatePath);
+    await this.mailProvider.sendMail(
+      emailToSend,
+      "Inscrição formação IDEALDISC AVANÇADO.",
+      variables,
+      templatePath,
+      cc,
+    );
 
     return returnableSubscription;
   }

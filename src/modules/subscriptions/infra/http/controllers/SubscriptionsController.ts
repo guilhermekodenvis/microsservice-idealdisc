@@ -5,11 +5,11 @@ import { container } from "tsyringe";
 
 export default class SubscriptionsController {
   public async create(request: Request, response: Response): Promise<Response> {
-    const { participants, billingData, masterUserData } = request.body;
+    const { participants, billingData, masterUserData, cc } = request.body;
 
     const createSubscription = container.resolve(CreateSubscriptionService);
 
-    const createdSubscription = await createSubscription.run({ participants, billingData, masterUserData });
+    const createdSubscription = await createSubscription.run({ participants, billingData, masterUserData, cc });
 
     return response.json(classToClass(createdSubscription)).status(201);
   }
