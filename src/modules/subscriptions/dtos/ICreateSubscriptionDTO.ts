@@ -7,4 +7,6 @@ export default interface ICreateSubscriptionDTO {
   billingData: BillingData;
   masterUserData: MasterUserData;
   cc: string[];
+  investiment: string;
+  date: string;
 }
