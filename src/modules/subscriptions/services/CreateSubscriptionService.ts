@@ -76,7 +76,11 @@ class CreateSubscriptionService {
       emailToSend = billingData.email;
     }
 
+    const participantsEmails = participants.map(participant => participant.email);
+
     const filteredCc = cc.filter(n => n);
+
+    filteredCc.concat(participantsEmails);
 
     await this.mailProvider.sendMail(
       emailToSend,
