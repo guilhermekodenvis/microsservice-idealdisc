@@ -40,7 +40,8 @@ class CreateSubscriptionService {
   }: ICreateSubscriptionDTO): Promise<Subscription> {
     const savedSubscription = await this.subscriptionsRepository.create();
 
-    const templatePath = path.resolve(__dirname, "..", "views", "emails", "subscriptionDone.hbs");
+    const templateEmailPath = path.resolve(__dirname, "..", "views", "emails", "subscriptionDone.hbs");
+    const notificationTemplateEmailPath = path.resolve(__dirname, "..", "views", "emails", "notification.hbs");
 
     participants.forEach(async participant => {
       await this.participantsRepository.create({
@@ -80,13 +81,19 @@ class CreateSubscriptionService {
 
     const filteredCc = cc.filter(n => n);
 
-    filteredCc.concat(participantsEmails);
-
     await this.mailProvider.sendMail(
       emailToSend,
       `Inscrição Treinamento FORMAÇÃO DISC AVANÇADO (ONLINE) - ${date}`,
       variables,
-      templatePath,
+      templateEmailPath,
+      participantsEmails,
+    );
+
+    await this.mailProvider.sendMail(
+      "treinamento@idealdisc.com.br",
+      `Inscrição Treinamento FORMAÇÃO DISC AVANÇADO (ONLINE) - ${date}`,
+      variables,
+      notificationTemplateEmailPath,
       filteredCc,
     );
 
