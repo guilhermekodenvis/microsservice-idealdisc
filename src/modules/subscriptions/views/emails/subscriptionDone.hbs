@@ -128,14 +128,16 @@
               <th width="30%" >CNPJ</th>
               <td>{{returnableSubscription.billingData.cpfOrCnpj}}</td>
             </tr>
-            <tr>
-              <th width="30%" >Endereço</th>
-              <td>{{returnableSubscription.billingData.street}}, {{returnableSubscription.billingData.number}}, {{returnableSubscription.billingData.complement}}, {{returnableSubscription.billingData.neighboor}}, {{returnableSubscription.billingData.city}}, {{returnableSubscription.billingData.state}}</td>
-            </tr>
-            <tr>
-              <th width="30%" >CEP</th>
-              <td>{{returnableSubscription.billingData.postalCode}}</td>
-            </tr>
+            {{#if returnableSubscription.billingData.street}}
+              <tr>
+                <th width="30%" >Endereço</th>
+                <td>{{returnableSubscription.billingData.street}}, {{returnableSubscription.billingData.number}}, {{returnableSubscription.billingData.complement}}, {{returnableSubscription.billingData.neighboor}}, {{returnableSubscription.billingData.city}}, {{returnableSubscription.billingData.state}}</td>
+              </tr>
+              <tr>
+                <th width="30%" >CEP</th>
+                <td>{{returnableSubscription.billingData.postalCode}}</td>
+              </tr>
+            {{/if}}
             <tr>
               <th width="30%" >Nome</th>
               <td>{{returnableSubscription.billingData.name}}</td>
@@ -173,14 +175,16 @@
               <th width="30%" >CPF</th>
               <td>{{returnableSubscription.billingData.cpfOrCnpj}}</td>
             </tr>
-            <tr>
-              <th width="30%" >Endereço</th>
-              <td>{{returnableSubscription.billingData.street}}, {{returnableSubscription.billingData.number}}, {{returnableSubscription.billingData.complement}}, {{returnableSubscription.billingData.neighboor}}, {{returnableSubscription.billingData.city}}, {{returnableSubscription.billingData.state}}</td>
-            </tr>
-            <tr>
-              <th width="30%" >CEP</th>
-              <td>{{returnableSubscription.billingData.postalCode}}</td>
-            </tr>
+            {{#if returnableSubscription.billingData.street}}
+              <tr>
+                <th width="30%" >Endereço</th>
+                <td>{{returnableSubscription.billingData.street}}, {{returnableSubscription.billingData.number}}, {{returnableSubscription.billingData.complement}}, {{returnableSubscription.billingData.neighboor}}, {{returnableSubscription.billingData.city}}, {{returnableSubscription.billingData.state}}</td>
+              </tr>
+              <tr>
+                <th width="30%" >CEP</th>
+                <td>{{returnableSubscription.billingData.postalCode}}</td>
+              </tr>
+            {{/if}}
             <tr>
               <th width="30%" >Forma de Pagamento</th>
               <td>{{returnableSubscription.billingData.paymentMethod}}</td>
@@ -227,44 +231,43 @@
               <th width="30%" >Instagram</th>
               <td>{{this.instagram}}</td>
             </tr>
-            <tr>
-              <th width="30%" colspan="2">&nbsp;</th>
-            </tr>
           {{/each}}
         </tbody>
       </table>
     </div>
-
     <br/>
-    <div class="table">
-      <table rules="all">
-        <tbody>
-          <tr>
-            <th class="darkblue-bg" colspan="2">Dados do Usuário Master (plataforma idealDisc)</th>
-          </tr>
-          <tr>
-            <th width="30%" >Nome</th>
-            <td>{{returnableSubscription.masterUserData.name}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >Cargo</th>
-            <td>{{returnableSubscription.masterUserData.office}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >E-mail</th>
-            <td>{{returnableSubscription.masterUserData.email}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >Telefone</th>
-            <td>{{returnableSubscription.masterUserData.tel}}</td>
-          </tr>
-          <tr>
-            <th width="30%" >Celular</th>
-            <td>{{returnableSubscription.masterUserData.mobile}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+
+    {{#if returnableSubscription.masterUserData}}
+      <div class="table">
+        <table rules="all">
+          <tbody>
+            <tr>
+              <th class="darkblue-bg" colspan="2">Dados do Usuário Master (plataforma idealDisc)</th>
+            </tr>
+            <tr>
+              <th width="30%" >Nome</th>
+              <td>{{returnableSubscription.masterUserData.name}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >Cargo</th>
+              <td>{{returnableSubscription.masterUserData.office}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >E-mail</th>
+              <td>{{returnableSubscription.masterUserData.email}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >Telefone</th>
+              <td>{{returnableSubscription.masterUserData.tel}}</td>
+            </tr>
+            <tr>
+              <th width="30%" >Celular</th>
+              <td>{{returnableSubscription.masterUserData.mobile}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    {{/if}}
 
     <div class="rodape">
 
