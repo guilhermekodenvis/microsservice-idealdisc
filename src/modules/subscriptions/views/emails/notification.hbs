@@ -114,34 +114,34 @@
               <th class="darkblue-bg" colspan="2">Pessoa jurídica</th>
             </tr>
             <tr>
-              <th width="30%" >Empresa (Razão Social)</th>
-              <td>{{returnableSubscription.billingData.corporateName}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Empresa (Razão Social)</th>
+              <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.billingData.corporateName}}</td>
             </tr>
             <tr>
-              <th width="30%" >CNPJ</th>
-              <td>{{returnableSubscription.billingData.cpfOrCnpj}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">CNPJ</th>
+              <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.billingData.cpfOrCnpj}}</td>
             </tr>
             {{#if returnableSubscription.billingData.street}}
               <tr>
-                <th width="30%" >Endereço</th>
-                <td>{{returnableSubscription.billingData.street}}, {{returnableSubscription.billingData.number}}, {{returnableSubscription.billingData.complement}}, {{returnableSubscription.billingData.neighboor}}, {{returnableSubscription.billingData.city}}, {{returnableSubscription.billingData.state}}</td>
+                <th width="30%" style="border-bottom: 1px solid #000000;">Endereço</th>
+                <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.billingData.street}}, {{returnableSubscription.billingData.number}}, {{returnableSubscription.billingData.complement}}, {{returnableSubscription.billingData.neighboor}}, {{returnableSubscription.billingData.city}}, {{returnableSubscription.billingData.state}}</td>
               </tr>
               <tr>
-                <th width="30%" >CEP</th>
-                <td>{{returnableSubscription.billingData.postalCode}}</td>
+                <th width="30%" style="border-bottom: 1px solid #000000;">CEP</th>
+                <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.billingData.postalCode}}</td>
               </tr>
             {{/if}}
             <tr>
-              <th width="30%" >Nome</th>
-              <td>{{returnableSubscription.billingData.name}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Nome</th>
+              <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.billingData.name}}</td>
             </tr>
             <tr>
-              <th width="30%" >E-Mail</th>
-              <td>{{returnableSubscription.billingData.email}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">E-Mail</th>
+              <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.billingData.email}}</td>
             </tr>
             <tr>
-              <th width="30%" >Forma de Pagamento</th>
-              <td>{{returnableSubscription.billingData.paymentMethod}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Forma de Pagamento</th>
+              <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.billingData.paymentMethod}}</td>
             </tr>
           </tbody>
         </table>
@@ -157,30 +157,30 @@
               <th class="darkblue-bg" colspan="2">Pessoa Física</th>
             </tr>
             <tr>
-              <th width="30%" >Nome</th>
-              <td>{{returnableSubscription.billingData.name}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Nome</th>
+              <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.billingData.name}}</td>
             </tr>
             <tr>
-              <th width="30%" >E-Mail</th>
-              <td>{{returnableSubscription.billingData.email}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">E-Mail</th>
+              <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.billingData.email}}</td>
             </tr>
             <tr>
-              <th width="30%" >CPF</th>
-              <td>{{returnableSubscription.billingData.cpfOrCnpj}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">CPF</th>
+              <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.billingData.cpfOrCnpj}}</td>
             </tr>
             {{#if returnableSubscription.billingData.street}}
               <tr>
-                <th width="30%" >Endereço</th>
-                <td>{{returnableSubscription.billingData.street}}, {{returnableSubscription.billingData.number}}, {{returnableSubscription.billingData.complement}}, {{returnableSubscription.billingData.neighboor}}, {{returnableSubscription.billingData.city}}, {{returnableSubscription.billingData.state}}</td>
+                <th width="30%" style="border-bottom: 1px solid #000000;">Endereço</th>
+                <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.billingData.street}}, {{returnableSubscription.billingData.number}}, {{returnableSubscription.billingData.complement}}, {{returnableSubscription.billingData.neighboor}}, {{returnableSubscription.billingData.city}}, {{returnableSubscription.billingData.state}}</td>
               </tr>
               <tr>
-                <th width="30%" >CEP</th>
-                <td>{{returnableSubscription.billingData.postalCode}}</td>
+                <th width="30%" style="border-bottom: 1px solid #000000;">CEP</th>
+                <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.billingData.postalCode}}</td>
               </tr>
             {{/if}}
             <tr>
-              <th width="30%" >Forma de Pagamento</th>
-              <td>{{returnableSubscription.billingData.paymentMethod}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Forma de Pagamento</th>
+              <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.billingData.paymentMethod}}</td>
             </tr>
           </tbody>
         </table>
@@ -197,35 +197,32 @@
           </tr>
           {{#each returnableSubscription.participants}}
             <tr>
-              <th width="30%" >Nome</th>
-              <td>{{this.name}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Nome</th>
+              <td style="border-bottom: 1px solid #000000;">{{this.name}}</td>
             </tr>
             <tr>
-              <th width="30%" >Cpf</th>
-              <td>{{this.cpf}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Cpf</th>
+              <td style="border-bottom: 1px solid #000000;">{{this.cpf}}</td>
             </tr>
             <tr>
-              <th width="30%" >Email</th>
-              <td>{{this.email}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Email</th>
+              <td style="border-bottom: 1px solid #000000;">{{this.email}}</td>
             </tr>
             <tr>
-              <th width="30%" >Telefone</th>
-              <td>{{this.tel}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Telefone</th>
+              <td style="border-bottom: 1px solid #000000;">{{this.tel}}</td>
             </tr>
             <tr>
-              <th width="30%" >Celular</th>
-              <td>{{this.cell}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Celular</th>
+              <td style="border-bottom: 1px solid #000000;">{{this.cell}}</td>
             </tr>
             <tr>
-              <th width="30%" >Cargo</th>
-              <td>{{this.office}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Cargo</th>
+              <td style="border-bottom: 1px solid #000000;">{{this.office}}</td>
             </tr>
             <tr>
-              <th width="30%" >Instagram</th>
-              <td>{{this.instagram}}</td>
-            </tr>
-            <tr>
-              <th width="30%" colspan="2">&nbsp;</th>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Instagram</th>
+              <td style="border-bottom: 1px solid #000000;">{{this.instagram}}</td>
             </tr>
           {{/each}}
         </tbody>
@@ -241,24 +238,24 @@
               <th class="darkblue-bg" colspan="2">Dados do Usuário Master (plataforma idealDisc)</th>
             </tr>
             <tr>
-              <th width="30%" >Nome</th>
-              <td>{{returnableSubscription.masterUserData.name}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Nome</th>
+              <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.masterUserData.name}}</td>
             </tr>
             <tr>
-              <th width="30%" >Cargo</th>
-              <td>{{returnableSubscription.masterUserData.office}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Cargo</th>
+              <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.masterUserData.office}}</td>
             </tr>
             <tr>
-              <th width="30%" >E-mail</th>
-              <td>{{returnableSubscription.masterUserData.email}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">E-mail</th>
+              <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.masterUserData.email}}</td>
             </tr>
             <tr>
-              <th width="30%" >Telefone</th>
-              <td>{{returnableSubscription.masterUserData.tel}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Telefone</th>
+              <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.masterUserData.tel}}</td>
             </tr>
             <tr>
-              <th width="30%" >Celular</th>
-              <td>{{returnableSubscription.masterUserData.mobile}}</td>
+              <th width="30%" style="border-bottom: 1px solid #000000;">Celular</th>
+              <td style="border-bottom: 1px solid #000000;">{{returnableSubscription.masterUserData.mobile}}</td>
             </tr>
           </tbody>
         </table>
