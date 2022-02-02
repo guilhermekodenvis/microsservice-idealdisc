@@ -68,6 +68,7 @@ class CreateSubscriptionService {
       returnableSubscription,
       investiment,
       date,
+      alreadyClient: !returnableSubscription.billingData.street,
     };
 
     let emailToSend: string;
